@@ -20,7 +20,7 @@ public class HelloHerokuApplication extends UI {
         name.setValue("Hello, DevOps!");
 
         
-        layout.addComponents(name, button);
+        layout.addComponents(message);
         
         setContent(layout);
     }
