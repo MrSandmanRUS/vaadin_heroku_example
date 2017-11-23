@@ -4,6 +4,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.vaadin.server.VaadinSession;
 
 public class HelloHerokuApplication extends UI {
 
@@ -16,8 +17,9 @@ public class HelloHerokuApplication extends UI {
 
     @Override
     public void init(final VaadinRequest vaadinRequest) {
-		VaadinSession.getCurrent().getSession().setMaxInactiveInterval(300); 
-        final VerticalLayout layout = new VerticalLayout();
+		VaadinSession.getCurrent().getSession().setMaxInactiveInterval(60); // 1 minute
+
+		final VerticalLayout layout = new VerticalLayout();
         
         final TextField name = new TextField();
         name.setCaption("Type your name here:");
