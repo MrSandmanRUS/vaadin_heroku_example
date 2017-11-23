@@ -16,8 +16,7 @@ public class HelloHerokuApplication extends UI {
 
 		final VerticalLayout layout = new VerticalLayout();
         
-        final TextArea message = new TextArea();
-        message.setValue("Hello, DevOps!");
+		Label message = new Label("Hello, DevOps!");
 
         
         layout.addComponents(message);
