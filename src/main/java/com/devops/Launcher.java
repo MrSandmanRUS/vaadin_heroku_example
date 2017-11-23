@@ -1,9 +1,9 @@
 package com.devops;
 
-import com.devops.HelloHerokuApplication;
+import com.devops.application.HelloHerokuApplication;
 
-import static com.devops.vaadin.heroku.VaadinForHeroku.forApplication;
-import static com.devops.vaadin.heroku.VaadinForHeroku.herokuServer;
+import static eu.hurion.vaadin.heroku.VaadinForHeroku.forApplication;
+import static eu.hurion.vaadin.heroku.VaadinForHeroku.herokuServer;
 
 public class Launcher {
 
