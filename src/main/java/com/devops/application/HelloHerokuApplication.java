@@ -17,7 +17,7 @@ public class HelloHerokuApplication extends UI {
 
     @Override
     public void init(final VaadinRequest vaadinRequest) {
-		VaadinSession.getCurrent().getSession().setMaxInactiveInterval(60); // 1 minute
+		VaadinSession.getCurrent().getSession().setMaxInactiveInterval(600); // 1 minute
 
 		final VerticalLayout layout = new VerticalLayout();
         
