@@ -24,11 +24,11 @@ public class HelloHerokuApplication extends UI {
         final TextField name = new TextField();
         name.setCaption("Type your name here:");
 
-        Button button = new Button("Click Me");
+       /* Button button = new Button("Click Me");
         button.addClickListener(e -> {
             layout.addComponent(new Label("Thanks " + name.getValue() 
                     + ", it works!"));
-        });
+        });*/
         
         layout.addComponents(name, button);
         
