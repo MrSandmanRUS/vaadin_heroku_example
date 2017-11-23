@@ -15,10 +15,6 @@
     </properties>
 
     <dependencies>
-		<dependency>
-            <groupId>com.bsb.common.vaadin</groupId>
-            <artifactId>com.bsb.common.vaadin7.embed</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-server</artifactId>
