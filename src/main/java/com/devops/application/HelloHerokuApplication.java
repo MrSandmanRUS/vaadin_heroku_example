@@ -16,37 +16,22 @@ public class HelloHerokuApplication extends UI {
 
     @Override
     public void init(final VaadinRequest vaadinRequest) {
-        setContent(buildContent());
-    }
+        final VerticalLayout layout = new VerticalLayout();
+        
+        final TextField name = new TextField();
+        name.setCaption("Type your name here:");
 
-    private ComponentContainer buildContent() {
-        final FormLayout formLayout = new FormLayout();
-        formLayout.setSpacing(true);
-        formLayout.setSizeUndefined();
-
-        final TextField nameInput = new TextField();
-        nameInput.setCaption(NAME_LABEL);
-        final String storedName = (String) getUI().getSession().getAttribute(NAME);
-        if (storedName != null){
-            nameInput.setValue(storedName);
-        }
-        formLayout.addComponent(nameInput);
-
-        final Button showButton = new Button(BUTTON_CAPTION, new Button.ClickListener() {
-            @Override
-            public void buttonClick(final Button.ClickEvent clickEvent) {
-                getUI().getSession().setAttribute(NAME, nameInput.getValue());
-                final String greeting = HELLO_WORLD + nameInput.getValue() + " !";
-                LOG.debug(greeting);
-                Notification.show(greeting);
-            }
+        Button button = new Button("Click Me");
+        button.addClickListener(e -> {
+            layout.addComponent(new Label("Thanks " + name.getValue() 
+                    + ", it works!"));
         });
-        formLayout.addComponent(showButton);
-        final VerticalLayout vl = new VerticalLayout();
-        vl.addComponent(formLayout);
-        vl.setComponentAlignment(formLayout, Alignment.MIDDLE_CENTER);
-        vl.setSizeFull();
-        return vl;
+        
+        layout.addComponents(name, button);
+        
+        setContent(layout);
     }
+
+   
 
 }
