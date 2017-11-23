@@ -16,6 +16,7 @@ public class HelloHerokuApplication extends UI {
 
     @Override
     public void init(final VaadinRequest vaadinRequest) {
+		VaadinSession.getCurrent().getSession().setMaxInactiveInterval(300); 
         final VerticalLayout layout = new VerticalLayout();
         
         final TextField name = new TextField();
